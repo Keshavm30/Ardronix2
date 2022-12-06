@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Card UI Design HTML CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+
+<body bgcolor="#101424">
+    <section class="slider">
+        <div class="card">
+            <div class="card-content">
+                <img src="images/fdfdbz-removebg-preview.png" alt="" class="card-img">
+                <h1 class="card-title">Balaji Cream &<br>Onion Wafers</h1>
+                <div class="card-body">
+                    <div class="card-star">
+                        <span class="rating-value">4.4</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <p class="card-price">₹5.00</p>
+                </div>
+                <div class="card-footer">
+                    <button id="rzp-button1" class="btn btn-success">Buy Now</button>
+                    <!-- <button class="btn btn-border">Add To Cart</button> -->
+                    <script>
+                        var options = {
+                            "key": "rzp_test_dCPBXp7qDyo2Hl", // Enter the Key ID generated from the Dashboard
+                            "amount": "100", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                            "currency": "INR",
+                            "name": "Ardronix|Balaji Cream & Onion Wafers",
+                            "description": "Test Transaction",
+                            "image": "https://yt3.ggpht.com/CDHehTtMoCAA5A89b3qeQioKFoHVu2cHbVQ2nCHA52wOPtlYfx2Vbr7HjtbLGojVTlPwXwcO4eg=s88-c-k-c0x00ffffff-no-rj",
+                            //"order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                            "handler": function (response){
+                                // alert(response.razorpay_payment_id);
+                                // alert(response.razorpay_order_id);
+                                // alert(response.razorpay_signature)
+                                fetch('https://blr1.blynk.cloud/external/api/update?token=sZ6ntkLGMKcnSPIoY1sD0RwWOYKhbChx&v1=1')
+                                alert("Thanks So Much for Your Order! We Hope You Enjoy Your New Purchase!");
+                        
+                            },
+                            "prefill": {
+                                "name": "",
+                                "email": "example@gmail.com",
+                                "contact": "0123456789"
+                            },
+                            "notes": {
+                                "address": "Razorpay Corporate Office"
+                            },
+                            "theme": {
+                                "color": "#3399cc"
+                            }
+                        };
+                        var rzp1 = new Razorpay(options);
+                         rzp1.on('payment.failed', function (response){
+                                   alert(response.error.code);
+                        //         alert(response.error.description);
+                        //         alert(response.error.source);
+                        //         alert(response.error.step);
+                        //         alert(response.error.reason);
+                        //         alert(response.error.metadata.order_id);
+                        //         alert(response.error.metadata.payment_id);
+                        });
+                        document.getElementById('rzp-button1').onclick = function(e){
+                            rzp1.open();
+                            e.preventDefault();
+                        }
+                        </script>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="images/laptop 3.png" alt="" class="card-img">
+                <h1 class="card-title">HP Spectre x360 15</h1>
+                <div class="card-body">
+                    <div class="card-star">
+                        <span class="rating-value">4</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <p class="card-price">$550.99</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success">Buy Now</button>
+                    <button class="btn btn-border">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="images/ipad.png" alt="" class="card-img">
+                <h1 class="card-title">Apple Ipad 15</h1>
+                <div class="card-body">
+                    <div class="card-star">
+                        <span class="rating-value">4.6</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <p class="card-price">$750.99</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success">Buy Now</button>
+                    <button class="btn btn-border">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="images/Apple-iPhone-12-Pro.png" alt="" class="card-img">
+                <h1 class="card-title">Apple iPhone 12 Pro</h1>
+                <div class="card-body">
+                    <div class="card-star">
+                        <span class="rating-value">4.7</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <p class="card-price">$1000.99</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success">Buy Now</button>
+                    <button class="btn btn-border">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="images/g233 prodigy gaming headset.png" alt="" class="card-img">
+                <h1 class="card-title">g233 prodigy gaming headset</h1>
+                <div class="card-body">
+                    <div class="card-star">
+                        <span class="rating-value">4.5</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <p class="card-price">$450.99</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success">Buy Now</button>
+                    <button class="btn btn-border">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="images/ROG StrixmWireless gaming headset.png" alt="" class="card-img">
+                <h1 class="card-title">ROG Strixm Wireless gaming</h1>
+                <div class="card-body">
+                    <div class="card-star">
+                        <span class="rating-value">4.4</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <p class="card-price">$350.99</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success">Buy Now</button>
+                    <button class="btn btn-border">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="images/Nike Running Shoese.png" alt="" class="card-img">
+                <h1 class="card-title">Nike Running Shoese</h1>
+                <div class="card-body">
+                    <div class="card-star">
+                        <span class="rating-value">4.5</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <p class="card-price">$250.99</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success">Buy Now</button>
+                    <button class="btn btn-border">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="images/Running Shoes.png" alt="" class="card-img">
+                <h1 class="card-title">Running Shoes</h1>
+                <div class="card-body">
+                    <div class="card-star">
+                        <span class="rating-value">4.4</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <p class="card-price">$150.99</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success">Buy Now</button>
+                    <button class="btn btn-border">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
