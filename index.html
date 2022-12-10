@@ -2,14 +2,22 @@
 <html lang="en">
 
 <head>
+    <link rel="apple-touch-icon" type="image/png" href="images/LOGO.png">
+<meta name="apple-mobile-web-app-title" content="Ardronix">
+
+<link rel="shortcut icon" type="image/x-icon" href="images/LOGO.png">
+
+<link rel="mask-icon" type="image/x-icon" href="images/LOGO.png" color="#111">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ardronix | vending machine</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script/Home Page/style.css">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="script/piracy protection 1.js"></script>
-    <script src="script/piracy protection 2.js"></script>
+    <script src="script/Common/piracy protection 1.js"></script>
+    <script src="script/Common/piracy protection 2.js"></script>
+    <script src="script/Common/piracy protection 3.js"></script>
 
 </head>
 
@@ -17,7 +25,7 @@
     <section class="slider">
         <div class="card">
             <div class="card-content">
-                <img src="images/fdfdbz-removebg-preview.png" alt="" class="card-img">
+                <img src="images/Balaji Cream Onion Wafers.png" alt="" class="card-img">
                 <h1 class="card-title">Balaji Cream &<br>Onion Wafers</h1>
                 <div class="card-body">
                     <div class="card-star">
@@ -27,105 +35,55 @@
                     <p class="card-price">₹5.00</p>
                 </div>
                 <div class="card-footer">
-                    <button id="rzp-button1" class="btn btn-success">Buy Now</button>
-                    <script>
-                        var options = {
-                            "key": "rzp_test_dCPBXp7qDyo2Hl", // Enter the Key ID generated from the Dashboard
-                            "amount": "100", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-                            "currency": "INR",
-                            "name": "Ardronix|Balaji Cream & Onion Wafers",
-                            "description": "Test Transaction",
-                            "image": "https://yt3.ggpht.com/CDHehTtMoCAA5A89b3qeQioKFoHVu2cHbVQ2nCHA52wOPtlYfx2Vbr7HjtbLGojVTlPwXwcO4eg=s88-c-k-c0x00ffffff-no-rj",
-                            //"order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-                            "handler": function (response){
-                                // alert(response.razorpay_payment_id);
-                                // alert(response.razorpay_order_id);
-                                // alert(response.razorpay_signature)
-                                fetch('https://blr1.blynk.cloud/external/api/update?token=sZ6ntkLGMKcnSPIoY1sD0RwWOYKhbChx&v1=1')
-                                // alert("Thanks So Much for Your Order! We Hope You Enjoy Your New Purchase!");
-                                window.open("https://www.w3schools.com");
-                                
-                                
-                        
-                            },
-                            "prefill": {
-                                "name": "",
-                                "email": "example@gmail.com",
-                                "contact": "0123456789"
-                            },
-                            "notes": {
-                                "address": "Razorpay Corporate Office"
-                            },
-                            "theme": {
-                                "color": "#3399cc"
-                            }
-                        };
-                        var rzp1 = new Razorpay(options);
-                         rzp1.on('payment.failed', function (response){
-                                   alert(response.error.code);
-                        //         alert(response.error.description);
-                        //         alert(response.error.source);
-                        //         alert(response.error.step);
-                        //         alert(response.error.reason);
-                        //         alert(response.error.metadata.order_id);
-                        //         alert(response.error.metadata.payment_id);
-                        });
-                        document.getElementById('rzp-button1').onclick = function(e){
-                            rzp1.open();
-                            e.preventDefault();
-                        }
-                        </script>
+                    <button class="btn btn-success" onclick="location.href='Balaji Cream & Onion Wafers.html';">Buy Now</button>
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="card-content">
-                <img src="images/laptop 3.png" alt="" class="card-img">
-                <h1 class="card-title">HP Spectre x360 15</h1>
+                <img src="images/cochin.png" alt="" class="card-img">
+                <h1 class="card-title">Cochin Fridge Magnet</h1>
                 <div class="card-body">
                     <div class="card-star">
-                        <span class="rating-value">4</span>
+                        <span class="rating-value">5</span>
                         <span class="star">&#9733;</span>
                     </div>
-                    <p class="card-price">$550.99</p>
+                    <p class="card-price">₹150.00</p>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-success">Buy Now</button>
-                    <button class="btn btn-border">Add To Cart</button>
+                    <button class="btn btn-success" onclick="location.href='Cochin Fridge Magnet.html';">Buy Now</button>
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="card-content">
-                <img src="images/ipad.png" alt="" class="card-img">
-                <h1 class="card-title">Apple Ipad 15</h1>
+                <img src="images/Munnar.png" alt="" class="card-img">
+                <h1 class="card-title">Munnar Fridge Magnet</h1>
                 <div class="card-body">
                     <div class="card-star">
                         <span class="rating-value">4.6</span>
                         <span class="star">&#9733;</span>
                     </div>
-                    <p class="card-price">$750.99</p>
+                    <p class="card-price">₹150.00</p>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-success">Buy Now</button>
-                    <button class="btn btn-border">Add To Cart</button>
+                    <button class="btn btn-success" onclick="location.href='Munnar Fridge Magnet.html';">Buy Now</button>
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="card-content">
-                <img src="images/Apple-iPhone-12-Pro.png" alt="" class="card-img">
-                <h1 class="card-title">Apple iPhone 12 Pro</h1>
+                <img src="images/Coffee.png" alt="" class="card-img">
+                <h1 class="card-title">Coffee</h1>
                 <div class="card-body">
                     <div class="card-star">
-                        <span class="rating-value">4.7</span>
+                        <span class="rating-value">4.5</span>
                         <span class="star">&#9733;</span>
                     </div>
-                    <p class="card-price">$1000.99</p>
+                    <p class="card-price">₹200.00</p>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-success">Buy Now</button>
-                    <button class="btn btn-border">Add To Cart</button>
+                    <button class="btn btn-success" onclick="location.href='Coffee.html';">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -198,12 +156,6 @@
             </div>
         </div>
     </section>
-    <script>
-        function CloseWin()
-        {
-            window.close();
-        }
-        </script>
         </head>
         <body>
 </body>
